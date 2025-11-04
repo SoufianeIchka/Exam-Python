@@ -1,0 +1,15 @@
+bill_total_str = input("Quel est le montant total de la facture ? ")
+bill_total = float(bill_total_str)
+tip_percentage_str = input("Quel pourcentage de pourboire souhaitez-vous laisser ? (ex: 15, 18, 20) ")
+tip_percentage = int(tip_percentage_str)
+num_people_str = input("Combien de personnes partagent la note ? ")
+num_people = int(num_people_str)
+tip_amount = bill_total * (tip_percentage / 100)
+total_with_tip = bill_total + tip_amount
+amount_per_person = total_with_tip / num_people
+final_amount_per_person = round(amount_per_person, 2)
+print("\n--- RÉSUMÉ DU PAIEMENT ---")
+print(f"Montant total avec pourboire : {total_with_tip:.2f} €")
+print(f"Chaque personne doit payer : {final_amount_per_person:.2f} €")
+print(f"(Basé sur une facture de {bill_total:.2f} € avec un pourboire de {tip_percentage}% partagé entre {num_people} personnes.)")
+input("\nAppuyez sur Entrée pour fermer...")
